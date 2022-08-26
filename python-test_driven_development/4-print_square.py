@@ -1,29 +1,18 @@
-import the module:
-	>>> show = __import__("4-print_square").print_square
-	>>> show(2)
-	##
-	##
+#!/usr/bin/python3
+""" print sqaure
+with characters
+"""
 
-test 0 input:
-	>>> show(-1)
-	Traceback (most recent call last):
-	...
-	ValueError: size must be >= 0
 
-test string inpupt:
-	>>> show("nic")
-	Traceback (most recent call last):
-	...
-	TypeError: size must be an integer
+def print_square(size):
+    """just the function body
+    """
+    if type(size) is not int:
+        raise TypeError("size must be an integer")
+    elif size < 0:
+        raise ValueError("size must be >= 0")
 
-test for float input:
-	>>> show(1.3)
-	Traceback (most recent call last):
-	...
-	TypeError: size must be an integer
-
-test for no input:
-	>>> show()
-	Traceback (most recent call last):
-	...
-	TypeError: print_square() missing 1 required positional argument: 'size'
+    length = size
+    while size > 0:
+        print("#" * length)
+        size -= 1
